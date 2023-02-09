@@ -1,0 +1,6 @@
+docker pull cassandra
+docker run -p 9042:9042 --name cassandra -d cassandra:latest
+docker exec  -it f0fa13b63070  sh
+CREATE KEYSPACE employeedb WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+USE employeedb;
+CREATE TABLE employee(emp_id int PRIMARY KEY, date text, first_name text);
